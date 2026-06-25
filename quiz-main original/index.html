@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> History Quiz</title>
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>History Quiz</h1>
+        <div class="meta">
+          <div><strong>Score:</strong> <span id="score">0</span></div>
+          <div>
+            <strong>Question:</strong> <span id="qIndex">1</span>/<span
+              id="qTotal"
+              >0</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section id="startScreen" class="screen">
+          <h2>Welcome</h2>
+          <p>Press <strong>Start Quiz</strong> to begin.</p>
+          <button id="startBtn" class="btn primary">Start Quiz</button>
+        </section>
+
+        <section id="quizScreen" class="screen hidden" aria-live="polite">
+          <h2 id="questionText" class="question">Question</h2>
+          <div id="feedback" class="feedback hidden" role="status"></div>
+
+          <div class="answers" id="answers"></div>
+
+          <div class="actions">
+            <button id="submitBtn" class="btn primary" disabled>Submit</button>
+            <button id="nextBtn" class="btn" disabled>Next</button>
+          </div>
+        </section>
+
+        <section id="resultScreen" class="screen hidden">
+          <h2>Your Results</h2>
+          <p class="result-line">
+            Final Score: <strong><span id="finalScore">0</span></strong> (<span
+              id="percent"
+              >0</span
+            >%)
+          </p>
+
+          <div class="summary" id="summary"></div>
+
+          <div class="actions">
+            <button id="reviewBtn" class="btn">Review Answers</button>
+            <button id="retakeBtn" class="btn primary">Retake Quiz</button>
+          </div>
+
+          <div id="reviewScreen" class="review hidden">
+            <h3>Review</h3>
+            <div class="summary" id="review"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
